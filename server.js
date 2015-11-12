@@ -1642,7 +1642,7 @@ module.exports =
               _react2['default'].createElement(
                 'span',
                 { className: 'Header-brandTxt' },
-                'Your Company'
+                'Guess Price'
               )
             ),
             _react2['default'].createElement(_Navigation2['default'], { className: 'Header-nav' }),
