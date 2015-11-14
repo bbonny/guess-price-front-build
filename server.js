@@ -1510,7 +1510,7 @@ module.exports =
     value: true
   });
   exports['default'] = {
-    googleAnalyticsId: 'UA-XXXXX-X'
+    googleAnalyticsId: 'UA-70088073-1'
   };
   module.exports = exports['default'];
 
