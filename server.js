@@ -54,7 +54,7 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
   
-  __webpack_require__(45);
+  __webpack_require__(31);
   
   var _path = __webpack_require__(7);
   
@@ -68,15 +68,15 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _reactDomServer = __webpack_require__(56);
+  var _reactDomServer = __webpack_require__(40);
   
   var _reactDomServer2 = _interopRequireDefault(_reactDomServer);
   
-  var _routes = __webpack_require__(29);
+  var _routes = __webpack_require__(22);
   
   var _routes2 = _interopRequireDefault(_routes);
   
-  var _componentsHtml = __webpack_require__(19);
+  var _componentsHtml = __webpack_require__(15);
   
   var _componentsHtml2 = _interopRequireDefault(_componentsHtml);
   
@@ -204,7 +204,7 @@ module.exports =
   
   // eslint-disable-line no-unused-vars
   
-  var _fbjsLibInvariant = __webpack_require__(49);
+  var _fbjsLibInvariant = __webpack_require__(33);
   
   var _fbjsLibInvariant2 = _interopRequireDefault(_fbjsLibInvariant);
   
@@ -394,7 +394,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _coreLocation = __webpack_require__(26);
+  var _coreLocation = __webpack_require__(20);
   
   var _coreLocation2 = _interopRequireDefault(_coreLocation);
   
@@ -547,7 +547,7 @@ module.exports =
   
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
   
-  var _pathToRegexp = __webpack_require__(42);
+  var _pathToRegexp = __webpack_require__(30);
   
   var _pathToRegexp2 = _interopRequireDefault(_pathToRegexp);
   
@@ -925,15 +925,15 @@ module.exports =
   
   var _express = __webpack_require__(6);
   
-  var _jade = __webpack_require__(55);
+  var _jade = __webpack_require__(39);
   
   var _jade2 = _interopRequireDefault(_jade);
   
-  var _frontMatter = __webpack_require__(50);
+  var _frontMatter = __webpack_require__(34);
   
   var _frontMatter2 = _interopRequireDefault(_frontMatter);
   
-  var _utilsFs = __webpack_require__(30);
+  var _utilsFs = __webpack_require__(23);
   
   var _utilsFs2 = _interopRequireDefault(_utilsFs);
   
@@ -1048,11 +1048,11 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _AppCss = __webpack_require__(31);
+  var _AppCss = __webpack_require__(24);
   
   var _AppCss2 = _interopRequireDefault(_AppCss);
   
-  var _decoratorsWithContext = __webpack_require__(27);
+  var _decoratorsWithContext = __webpack_require__(21);
   
   var _decoratorsWithContext2 = _interopRequireDefault(_decoratorsWithContext);
   
@@ -1060,17 +1060,13 @@ module.exports =
   
   var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
   
-  var _Header = __webpack_require__(18);
+  var _Header = __webpack_require__(14);
   
   var _Header2 = _interopRequireDefault(_Header);
   
-  var _Feedback = __webpack_require__(16);
+  var _SearchBox = __webpack_require__(17);
   
-  var _Feedback2 = _interopRequireDefault(_Feedback);
-  
-  var _Footer = __webpack_require__(17);
-  
-  var _Footer2 = _interopRequireDefault(_Footer);
+  var _SearchBox2 = _interopRequireDefault(_SearchBox);
   
   var App = (function (_Component) {
     _inherits(App, _Component);
@@ -1084,22 +1080,13 @@ module.exports =
     _createClass(App, [{
       key: 'render',
       value: function render() {
-        return !this.props.error ? _react2['default'].createElement(
+        return _react2['default'].createElement(
           'div',
           null,
           _react2['default'].createElement(_Header2['default'], null),
-          this.props.children,
-          _react2['default'].createElement(_Feedback2['default'], null),
-          _react2['default'].createElement(_Footer2['default'], null)
-        ) : this.props.children;
+          _react2['default'].createElement(_SearchBox2['default'], null)
+        );
       }
-    }], [{
-      key: 'propTypes',
-      value: {
-        children: _react.PropTypes.element.isRequired,
-        error: _react.PropTypes.object
-      },
-      enumerable: true
     }]);
   
     var _App = App;
@@ -1137,180 +1124,11 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _ContactPageCss = __webpack_require__(32);
-  
-  var _ContactPageCss2 = _interopRequireDefault(_ContactPageCss);
-  
   var _decoratorsWithStyles = __webpack_require__(2);
   
   var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
   
-  var ContactPage = (function (_Component) {
-    _inherits(ContactPage, _Component);
-  
-    function ContactPage() {
-      _classCallCheck(this, _ContactPage);
-  
-      _get(Object.getPrototypeOf(_ContactPage.prototype), 'constructor', this).apply(this, arguments);
-    }
-  
-    _createClass(ContactPage, [{
-      key: 'render',
-      value: function render() {
-        var title = 'Contact Us';
-        this.context.onSetTitle(title);
-        return _react2['default'].createElement(
-          'div',
-          { className: 'ContactPage' },
-          _react2['default'].createElement(
-            'div',
-            { className: 'ContactPage-container' },
-            _react2['default'].createElement(
-              'h1',
-              null,
-              title
-            ),
-            _react2['default'].createElement(
-              'p',
-              null,
-              '...'
-            )
-          )
-        );
-      }
-    }], [{
-      key: 'contextTypes',
-      value: {
-        onSetTitle: _react.PropTypes.func.isRequired
-      },
-      enumerable: true
-    }]);
-  
-    var _ContactPage = ContactPage;
-    ContactPage = (0, _decoratorsWithStyles2['default'])(_ContactPageCss2['default'])(ContactPage) || ContactPage;
-    return ContactPage;
-  })(_react.Component);
-  
-  exports['default'] = ContactPage;
-  module.exports = exports['default'];
-
-/***/ },
-/* 14 */
-/***/ function(module, exports, __webpack_require__) {
-
-  /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
-  
-  'use strict';
-  
-  Object.defineProperty(exports, '__esModule', {
-    value: true
-  });
-  
-  var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-  
-  var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-  
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-  
-  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-  
-  var _react = __webpack_require__(1);
-  
-  var _react2 = _interopRequireDefault(_react);
-  
-  var _ContentPageCss = __webpack_require__(33);
-  
-  var _ContentPageCss2 = _interopRequireDefault(_ContentPageCss);
-  
-  var _decoratorsWithStyles = __webpack_require__(2);
-  
-  var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
-  
-  var ContentPage = (function (_Component) {
-    _inherits(ContentPage, _Component);
-  
-    function ContentPage() {
-      _classCallCheck(this, _ContentPage);
-  
-      _get(Object.getPrototypeOf(_ContentPage.prototype), 'constructor', this).apply(this, arguments);
-    }
-  
-    _createClass(ContentPage, [{
-      key: 'render',
-      value: function render() {
-        this.context.onSetTitle(this.props.title);
-        return _react2['default'].createElement(
-          'div',
-          { className: 'ContentPage' },
-          _react2['default'].createElement(
-            'div',
-            { className: 'ContentPage-container' },
-            this.props.path === '/' ? null : _react2['default'].createElement(
-              'h1',
-              null,
-              this.props.title
-            ),
-            _react2['default'].createElement('div', { dangerouslySetInnerHTML: { __html: this.props.content || '' } })
-          )
-        );
-      }
-    }], [{
-      key: 'propTypes',
-      value: {
-        path: _react.PropTypes.string.isRequired,
-        content: _react.PropTypes.string.isRequired,
-        title: _react.PropTypes.string
-      },
-      enumerable: true
-    }, {
-      key: 'contextTypes',
-      value: {
-        onSetTitle: _react.PropTypes.func.isRequired
-      },
-      enumerable: true
-    }]);
-  
-    var _ContentPage = ContentPage;
-    ContentPage = (0, _decoratorsWithStyles2['default'])(_ContentPageCss2['default'])(ContentPage) || ContentPage;
-    return ContentPage;
-  })(_react.Component);
-  
-  exports['default'] = ContentPage;
-  module.exports = exports['default'];
-
-/***/ },
-/* 15 */
-/***/ function(module, exports, __webpack_require__) {
-
-  /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
-  
-  'use strict';
-  
-  Object.defineProperty(exports, '__esModule', {
-    value: true
-  });
-  
-  var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-  
-  var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-  
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-  
-  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-  
-  var _react = __webpack_require__(1);
-  
-  var _react2 = _interopRequireDefault(_react);
-  
-  var _decoratorsWithStyles = __webpack_require__(2);
-  
-  var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
-  
-  var _ErrorPageCss = __webpack_require__(34);
+  var _ErrorPageCss = __webpack_require__(25);
   
   var _ErrorPageCss2 = _interopRequireDefault(_ErrorPageCss);
   
@@ -1361,7 +1179,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 16 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -1386,222 +1204,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _FeedbackCss = __webpack_require__(35);
-  
-  var _FeedbackCss2 = _interopRequireDefault(_FeedbackCss);
-  
-  var _decoratorsWithStyles = __webpack_require__(2);
-  
-  var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
-  
-  var Feedback = (function (_Component) {
-    _inherits(Feedback, _Component);
-  
-    function Feedback() {
-      _classCallCheck(this, _Feedback);
-  
-      _get(Object.getPrototypeOf(_Feedback.prototype), 'constructor', this).apply(this, arguments);
-    }
-  
-    _createClass(Feedback, [{
-      key: 'render',
-      value: function render() {
-        return _react2['default'].createElement(
-          'div',
-          { className: 'Feedback' },
-          _react2['default'].createElement(
-            'div',
-            { className: 'Feedback-container' },
-            _react2['default'].createElement(
-              'a',
-              { className: 'Feedback-link', href: 'https://gitter.im/kriasoft/react-starter-kit' },
-              'Ask a question'
-            ),
-            _react2['default'].createElement(
-              'span',
-              { className: 'Feedback-spacer' },
-              '|'
-            ),
-            _react2['default'].createElement(
-              'a',
-              { className: 'Feedback-link', href: 'https://github.com/kriasoft/react-starter-kit/issues/new' },
-              'Report an issue'
-            )
-          )
-        );
-      }
-    }]);
-  
-    var _Feedback = Feedback;
-    Feedback = (0, _decoratorsWithStyles2['default'])(_FeedbackCss2['default'])(Feedback) || Feedback;
-    return Feedback;
-  })(_react.Component);
-  
-  exports['default'] = Feedback;
-  module.exports = exports['default'];
-
-/***/ },
-/* 17 */
-/***/ function(module, exports, __webpack_require__) {
-
-  /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
-  
-  'use strict';
-  
-  Object.defineProperty(exports, '__esModule', {
-    value: true
-  });
-  
-  var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-  
-  var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-  
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-  
-  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-  
-  var _react = __webpack_require__(1);
-  
-  var _react2 = _interopRequireDefault(_react);
-  
-  var _FooterCss = __webpack_require__(36);
-  
-  var _FooterCss2 = _interopRequireDefault(_FooterCss);
-  
-  var _decoratorsWithViewport = __webpack_require__(28);
-  
-  var _decoratorsWithViewport2 = _interopRequireDefault(_decoratorsWithViewport);
-  
-  var _decoratorsWithStyles = __webpack_require__(2);
-  
-  var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
-  
-  var _Link = __webpack_require__(5);
-  
-  var _Link2 = _interopRequireDefault(_Link);
-  
-  var Footer = (function (_Component) {
-    _inherits(Footer, _Component);
-  
-    function Footer() {
-      _classCallCheck(this, _Footer);
-  
-      _get(Object.getPrototypeOf(_Footer.prototype), 'constructor', this).apply(this, arguments);
-    }
-  
-    _createClass(Footer, [{
-      key: 'render',
-      value: function render() {
-        // This is just an example how one can render CSS
-        var _props$viewport = this.props.viewport;
-        var width = _props$viewport.width;
-        var height = _props$viewport.height;
-  
-        this.renderCss('.Footer-viewport:after {content:\' ' + width + 'x' + height + '\';}');
-  
-        return _react2['default'].createElement(
-          'div',
-          { className: 'Footer' },
-          _react2['default'].createElement(
-            'div',
-            { className: 'Footer-container' },
-            _react2['default'].createElement(
-              'span',
-              { className: 'Footer-text' },
-              '© Your Company'
-            ),
-            _react2['default'].createElement(
-              'span',
-              { className: 'Footer-spacer' },
-              '·'
-            ),
-            _react2['default'].createElement(
-              'a',
-              { className: 'Footer-link', href: '/', onClick: _Link2['default'].handleClick },
-              'Home'
-            ),
-            _react2['default'].createElement(
-              'span',
-              { className: 'Footer-spacer' },
-              '·'
-            ),
-            _react2['default'].createElement(
-              'a',
-              { className: 'Footer-link', href: '/privacy', onClick: _Link2['default'].handleClick },
-              'Privacy'
-            ),
-            _react2['default'].createElement(
-              'span',
-              { className: 'Footer-spacer' },
-              '·'
-            ),
-            _react2['default'].createElement(
-              'a',
-              { className: 'Footer-link', href: '/not-found', onClick: _Link2['default'].handleClick },
-              'Not Found'
-            ),
-            _react2['default'].createElement(
-              'span',
-              { className: 'Footer-spacer' },
-              ' | '
-            ),
-            _react2['default'].createElement(
-              'span',
-              { ref: 'viewport', className: 'Footer-viewport Footer-text Footer-text--muted' },
-              'Viewport:'
-            )
-          )
-        );
-      }
-    }], [{
-      key: 'propTypes',
-      value: {
-        viewport: _react.PropTypes.shape({
-          width: _react.PropTypes.number.isRequired,
-          height: _react.PropTypes.number.isRequired
-        }).isRequired
-      },
-      enumerable: true
-    }]);
-  
-    var _Footer = Footer;
-    Footer = (0, _decoratorsWithStyles2['default'])(_FooterCss2['default'])(Footer) || Footer;
-    Footer = (0, _decoratorsWithViewport2['default'])(Footer) || Footer;
-    return Footer;
-  })(_react.Component);
-  
-  exports['default'] = Footer;
-  module.exports = exports['default'];
-
-/***/ },
-/* 18 */
-/***/ function(module, exports, __webpack_require__) {
-
-  /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
-  
-  'use strict';
-  
-  Object.defineProperty(exports, '__esModule', {
-    value: true
-  });
-  
-  var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-  
-  var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-  
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-  
-  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-  
-  var _react = __webpack_require__(1);
-  
-  var _react2 = _interopRequireDefault(_react);
-  
-  var _HeaderCss = __webpack_require__(37);
+  var _HeaderCss = __webpack_require__(26);
   
   var _HeaderCss2 = _interopRequireDefault(_HeaderCss);
   
@@ -1612,10 +1215,6 @@ module.exports =
   var _Link = __webpack_require__(5);
   
   var _Link2 = _interopRequireDefault(_Link);
-  
-  var _Navigation = __webpack_require__(21);
-  
-  var _Navigation2 = _interopRequireDefault(_Navigation);
   
   var Header = (function (_Component) {
     _inherits(Header, _Component);
@@ -1638,26 +1237,10 @@ module.exports =
             _react2['default'].createElement(
               'a',
               { className: 'Header-brand', href: '/', onClick: _Link2['default'].handleClick },
-              _react2['default'].createElement('img', { className: 'Header-brandImg', src: __webpack_require__(44), width: '38', height: '38', alt: 'React' }),
               _react2['default'].createElement(
                 'span',
                 { className: 'Header-brandTxt' },
-                'Guess Price'
-              )
-            ),
-            _react2['default'].createElement(_Navigation2['default'], { className: 'Header-nav' }),
-            _react2['default'].createElement(
-              'div',
-              { className: 'Header-banner' },
-              _react2['default'].createElement(
-                'h1',
-                { className: 'Header-bannerTitle' },
-                'React'
-              ),
-              _react2['default'].createElement(
-                'p',
-                { className: 'Header-bannerDesc' },
-                'Complex web apps made easy'
+                'GimmeTheFuckingPrice'
               )
             )
           )
@@ -1674,7 +1257,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 19 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -1699,7 +1282,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _config = __webpack_require__(24);
+  var _config = __webpack_require__(18);
   
   var Html = (function (_Component) {
     _inherits(Html, _Component);
@@ -1771,195 +1354,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 20 */
-/***/ function(module, exports, __webpack_require__) {
-
-  /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
-  
-  'use strict';
-  
-  Object.defineProperty(exports, '__esModule', {
-    value: true
-  });
-  
-  var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-  
-  var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-  
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-  
-  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-  
-  var _react = __webpack_require__(1);
-  
-  var _react2 = _interopRequireDefault(_react);
-  
-  var _LoginPageCss = __webpack_require__(38);
-  
-  var _LoginPageCss2 = _interopRequireDefault(_LoginPageCss);
-  
-  var _decoratorsWithStyles = __webpack_require__(2);
-  
-  var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
-  
-  var LoginPage = (function (_Component) {
-    _inherits(LoginPage, _Component);
-  
-    function LoginPage() {
-      _classCallCheck(this, _LoginPage);
-  
-      _get(Object.getPrototypeOf(_LoginPage.prototype), 'constructor', this).apply(this, arguments);
-    }
-  
-    _createClass(LoginPage, [{
-      key: 'render',
-      value: function render() {
-        var title = 'Log In';
-        this.context.onSetTitle(title);
-        return _react2['default'].createElement(
-          'div',
-          { className: 'LoginPage' },
-          _react2['default'].createElement(
-            'div',
-            { className: 'LoginPage-container' },
-            _react2['default'].createElement(
-              'h1',
-              null,
-              title
-            ),
-            _react2['default'].createElement(
-              'p',
-              null,
-              '...'
-            )
-          )
-        );
-      }
-    }], [{
-      key: 'contextTypes',
-      value: {
-        onSetTitle: _react.PropTypes.func.isRequired
-      },
-      enumerable: true
-    }]);
-  
-    var _LoginPage = LoginPage;
-    LoginPage = (0, _decoratorsWithStyles2['default'])(_LoginPageCss2['default'])(LoginPage) || LoginPage;
-    return LoginPage;
-  })(_react.Component);
-  
-  exports['default'] = LoginPage;
-  module.exports = exports['default'];
-
-/***/ },
-/* 21 */
-/***/ function(module, exports, __webpack_require__) {
-
-  /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
-  
-  'use strict';
-  
-  Object.defineProperty(exports, '__esModule', {
-    value: true
-  });
-  
-  var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-  
-  var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-  
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-  
-  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-  
-  var _react = __webpack_require__(1);
-  
-  var _react2 = _interopRequireDefault(_react);
-  
-  var _classnames = __webpack_require__(46);
-  
-  var _classnames2 = _interopRequireDefault(_classnames);
-  
-  var _NavigationCss = __webpack_require__(39);
-  
-  var _NavigationCss2 = _interopRequireDefault(_NavigationCss);
-  
-  var _decoratorsWithStyles = __webpack_require__(2);
-  
-  var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
-  
-  var _Link = __webpack_require__(5);
-  
-  var _Link2 = _interopRequireDefault(_Link);
-  
-  var Navigation = (function (_Component) {
-    _inherits(Navigation, _Component);
-  
-    function Navigation() {
-      _classCallCheck(this, _Navigation);
-  
-      _get(Object.getPrototypeOf(_Navigation.prototype), 'constructor', this).apply(this, arguments);
-    }
-  
-    _createClass(Navigation, [{
-      key: 'render',
-      value: function render() {
-        return _react2['default'].createElement(
-          'div',
-          { className: (0, _classnames2['default'])(this.props.className, 'Navigation'), role: 'navigation' },
-          _react2['default'].createElement(
-            'a',
-            { className: 'Navigation-link', href: '/about', onClick: _Link2['default'].handleClick },
-            'About'
-          ),
-          _react2['default'].createElement(
-            'a',
-            { className: 'Navigation-link', href: '/contact', onClick: _Link2['default'].handleClick },
-            'Contact'
-          ),
-          _react2['default'].createElement(
-            'span',
-            { className: 'Navigation-spacer' },
-            ' | '
-          ),
-          _react2['default'].createElement(
-            'a',
-            { className: 'Navigation-link', href: '/login', onClick: _Link2['default'].handleClick },
-            'Log in'
-          ),
-          _react2['default'].createElement(
-            'span',
-            { className: 'Navigation-spacer' },
-            'or'
-          ),
-          _react2['default'].createElement(
-            'a',
-            { className: 'Navigation-link Navigation-link--highlight', href: '/register', onClick: _Link2['default'].handleClick },
-            'Sign up'
-          )
-        );
-      }
-    }], [{
-      key: 'propTypes',
-      value: {
-        className: _react.PropTypes.string
-      },
-      enumerable: true
-    }]);
-  
-    var _Navigation = Navigation;
-    Navigation = (0, _decoratorsWithStyles2['default'])(_NavigationCss2['default'])(Navigation) || Navigation;
-    return Navigation;
-  })(_react.Component);
-  
-  exports['default'] = Navigation;
-  module.exports = exports['default'];
-
-/***/ },
-/* 22 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -1988,7 +1383,7 @@ module.exports =
   
   var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
   
-  var _NotFoundPageCss = __webpack_require__(40);
+  var _NotFoundPageCss = __webpack_require__(27);
   
   var _NotFoundPageCss2 = _interopRequireDefault(_NotFoundPageCss);
   
@@ -2040,11 +1435,9 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 23 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
-  /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
-  
   'use strict';
   
   Object.defineProperty(exports, '__esModule', {
@@ -2065,65 +1458,48 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
+  var _SearchBoxCss = __webpack_require__(28);
+  
+  var _SearchBoxCss2 = _interopRequireDefault(_SearchBoxCss);
+  
   var _decoratorsWithStyles = __webpack_require__(2);
   
   var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
   
-  var _RegisterPageCss = __webpack_require__(41);
+  var _Link = __webpack_require__(5);
   
-  var _RegisterPageCss2 = _interopRequireDefault(_RegisterPageCss);
+  var _Link2 = _interopRequireDefault(_Link);
   
-  var RegisterPage = (function (_Component) {
-    _inherits(RegisterPage, _Component);
+  var SearchBox = (function (_Component) {
+    _inherits(SearchBox, _Component);
   
-    function RegisterPage() {
-      _classCallCheck(this, _RegisterPage);
+    function SearchBox() {
+      _classCallCheck(this, _SearchBox);
   
-      _get(Object.getPrototypeOf(_RegisterPage.prototype), 'constructor', this).apply(this, arguments);
+      _get(Object.getPrototypeOf(_SearchBox.prototype), 'constructor', this).apply(this, arguments);
     }
   
-    _createClass(RegisterPage, [{
+    _createClass(SearchBox, [{
       key: 'render',
       value: function render() {
-        var title = 'New User Registration';
-        this.context.onSetTitle(title);
         return _react2['default'].createElement(
           'div',
-          { className: 'RegisterPage' },
-          _react2['default'].createElement(
-            'div',
-            { className: 'RegisterPage-container' },
-            _react2['default'].createElement(
-              'h1',
-              null,
-              title
-            ),
-            _react2['default'].createElement(
-              'p',
-              null,
-              '...'
-            )
-          )
+          { className: 'SearchBox' },
+          _react2['default'].createElement('input', { type: 'text', autofocus: true, placholder: 'Model' })
         );
       }
-    }], [{
-      key: 'contextTypes',
-      value: {
-        onSetTitle: _react.PropTypes.func.isRequired
-      },
-      enumerable: true
     }]);
   
-    var _RegisterPage = RegisterPage;
-    RegisterPage = (0, _decoratorsWithStyles2['default'])(_RegisterPageCss2['default'])(RegisterPage) || RegisterPage;
-    return RegisterPage;
+    var _SearchBox = SearchBox;
+    SearchBox = (0, _decoratorsWithStyles2['default'])(_SearchBoxCss2['default'])(SearchBox) || SearchBox;
+    return SearchBox;
   })(_react.Component);
   
-  exports['default'] = RegisterPage;
+  exports['default'] = SearchBox;
   module.exports = exports['default'];
 
 /***/ },
-/* 24 */
+/* 18 */
 /***/ function(module, exports) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -2139,7 +1515,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 25 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -2152,7 +1528,7 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
   
-  var _superagent = __webpack_require__(57);
+  var _superagent = __webpack_require__(41);
   
   var _superagent2 = _interopRequireDefault(_superagent);
   
@@ -2190,7 +1566,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 26 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -2205,15 +1581,15 @@ module.exports =
   
   var _fbjsLibExecutionEnvironment = __webpack_require__(4);
   
-  var _historyLibCreateBrowserHistory = __webpack_require__(52);
+  var _historyLibCreateBrowserHistory = __webpack_require__(36);
   
   var _historyLibCreateBrowserHistory2 = _interopRequireDefault(_historyLibCreateBrowserHistory);
   
-  var _historyLibCreateMemoryHistory = __webpack_require__(53);
+  var _historyLibCreateMemoryHistory = __webpack_require__(37);
   
   var _historyLibCreateMemoryHistory2 = _interopRequireDefault(_historyLibCreateMemoryHistory);
   
-  var _historyLibUseQueries = __webpack_require__(54);
+  var _historyLibUseQueries = __webpack_require__(38);
   
   var _historyLibUseQueries2 = _interopRequireDefault(_historyLibUseQueries);
   
@@ -2223,7 +1599,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 27 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -2252,7 +1628,7 @@ module.exports =
   
   // eslint-disable-line no-unused-vars
   
-  var _fbjsLibEmptyFunction = __webpack_require__(48);
+  var _fbjsLibEmptyFunction = __webpack_require__(32);
   
   var _fbjsLibEmptyFunction2 = _interopRequireDefault(_fbjsLibEmptyFunction);
   
@@ -2318,108 +1694,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 28 */
-/***/ function(module, exports, __webpack_require__) {
-
-  /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
-  
-  'use strict';
-  
-  Object.defineProperty(exports, '__esModule', {
-    value: true
-  });
-  
-  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-  
-  var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-  
-  var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-  
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-  
-  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-  
-  var _react = __webpack_require__(1);
-  
-  var _react2 = _interopRequireDefault(_react);
-  
-  // eslint-disable-line no-unused-vars
-  
-  var _eventemitter3 = __webpack_require__(47);
-  
-  var _eventemitter32 = _interopRequireDefault(_eventemitter3);
-  
-  var _fbjsLibExecutionEnvironment = __webpack_require__(4);
-  
-  var EE = undefined;
-  var viewport = { width: 1366, height: 768 }; // Default size for server-side rendering
-  var RESIZE_EVENT = 'resize';
-  
-  function handleWindowResize() {
-    if (viewport.width !== window.innerWidth || viewport.height !== window.innerHeight) {
-      viewport = { width: window.innerWidth, height: window.innerHeight };
-      EE.emit(RESIZE_EVENT, viewport);
-    }
-  }
-  
-  function withViewport(ComposedComponent) {
-    return (function (_Component) {
-      _inherits(WithViewport, _Component);
-  
-      function WithViewport() {
-        _classCallCheck(this, WithViewport);
-  
-        _get(Object.getPrototypeOf(WithViewport.prototype), 'constructor', this).call(this);
-  
-        this.state = {
-          viewport: _fbjsLibExecutionEnvironment.canUseDOM ? { width: window.innerWidth, height: window.innerHeight } : viewport
-        };
-      }
-  
-      _createClass(WithViewport, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-          if (!EE) {
-            EE = new _eventemitter32['default']();
-            window.addEventListener('resize', handleWindowResize);
-            window.addEventListener('orientationchange', handleWindowResize);
-          }
-  
-          EE.on(RESIZE_EVENT, this.handleResize, this);
-        }
-      }, {
-        key: 'componentWillUnmount',
-        value: function componentWillUnmount() {
-          EE.removeListener(RESIZE_EVENT, this.handleResize, this);
-          if (!EE.listeners(RESIZE_EVENT, true)) {
-            window.removeEventListener('resize', handleWindowResize);
-            window.removeEventListener('orientationchange', handleWindowResize);
-            EE = null;
-          }
-        }
-      }, {
-        key: 'render',
-        value: function render() {
-          return _react2['default'].createElement(ComposedComponent, _extends({}, this.props, { viewport: this.state.viewport }));
-        }
-      }, {
-        key: 'handleResize',
-        value: function handleResize(value) {
-          this.setState({ viewport: value }); // eslint-disable-line react/no-set-state
-        }
-      }]);
-  
-      return WithViewport;
-    })(_react.Component);
-  }
-  
-  exports['default'] = withViewport;
-  module.exports = exports['default'];
-
-/***/ },
-/* 29 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -2442,7 +1717,7 @@ module.exports =
   
   var _reactRoutingSrcRouter2 = _interopRequireDefault(_reactRoutingSrcRouter);
   
-  var _coreHttpClient = __webpack_require__(25);
+  var _coreHttpClient = __webpack_require__(19);
   
   var _coreHttpClient2 = _interopRequireDefault(_coreHttpClient);
   
@@ -2450,106 +1725,22 @@ module.exports =
   
   var _componentsApp2 = _interopRequireDefault(_componentsApp);
   
-  var _componentsContentPage = __webpack_require__(14);
-  
-  var _componentsContentPage2 = _interopRequireDefault(_componentsContentPage);
-  
-  var _componentsContactPage = __webpack_require__(13);
-  
-  var _componentsContactPage2 = _interopRequireDefault(_componentsContactPage);
-  
-  var _componentsLoginPage = __webpack_require__(20);
-  
-  var _componentsLoginPage2 = _interopRequireDefault(_componentsLoginPage);
-  
-  var _componentsRegisterPage = __webpack_require__(23);
-  
-  var _componentsRegisterPage2 = _interopRequireDefault(_componentsRegisterPage);
-  
-  var _componentsNotFoundPage = __webpack_require__(22);
+  var _componentsNotFoundPage = __webpack_require__(16);
   
   var _componentsNotFoundPage2 = _interopRequireDefault(_componentsNotFoundPage);
   
-  var _componentsErrorPage = __webpack_require__(15);
+  var _componentsErrorPage = __webpack_require__(13);
   
   var _componentsErrorPage2 = _interopRequireDefault(_componentsErrorPage);
   
   var router = new _reactRoutingSrcRouter2['default'](function (on) {
     on('*', function callee$1$0(state, next) {
-      var component;
       return regeneratorRuntime.async(function callee$1$0$(context$2$0) {
         while (1) switch (context$2$0.prev = context$2$0.next) {
           case 0:
-            context$2$0.next = 2;
-            return regeneratorRuntime.awrap(next());
-  
-          case 2:
-            component = context$2$0.sent;
-            return context$2$0.abrupt('return', component && _react2['default'].createElement(
-              _componentsApp2['default'],
-              { context: state.context },
-              component
-            ));
-  
-          case 4:
-          case 'end':
-            return context$2$0.stop();
-        }
-      }, null, _this);
-    });
-  
-    on('/contact', function callee$1$0() {
-      return regeneratorRuntime.async(function callee$1$0$(context$2$0) {
-        while (1) switch (context$2$0.prev = context$2$0.next) {
-          case 0:
-            return context$2$0.abrupt('return', _react2['default'].createElement(_componentsContactPage2['default'], null));
+            return context$2$0.abrupt('return', _react2['default'].createElement(_componentsApp2['default'], { context: state.context }));
   
           case 1:
-          case 'end':
-            return context$2$0.stop();
-        }
-      }, null, _this);
-    });
-  
-    on('/login', function callee$1$0() {
-      return regeneratorRuntime.async(function callee$1$0$(context$2$0) {
-        while (1) switch (context$2$0.prev = context$2$0.next) {
-          case 0:
-            return context$2$0.abrupt('return', _react2['default'].createElement(_componentsLoginPage2['default'], null));
-  
-          case 1:
-          case 'end':
-            return context$2$0.stop();
-        }
-      }, null, _this);
-    });
-  
-    on('/register', function callee$1$0() {
-      return regeneratorRuntime.async(function callee$1$0$(context$2$0) {
-        while (1) switch (context$2$0.prev = context$2$0.next) {
-          case 0:
-            return context$2$0.abrupt('return', _react2['default'].createElement(_componentsRegisterPage2['default'], null));
-  
-          case 1:
-          case 'end':
-            return context$2$0.stop();
-        }
-      }, null, _this);
-    });
-  
-    on('*', function callee$1$0(state) {
-      var content;
-      return regeneratorRuntime.async(function callee$1$0$(context$2$0) {
-        while (1) switch (context$2$0.prev = context$2$0.next) {
-          case 0:
-            context$2$0.next = 2;
-            return regeneratorRuntime.awrap(_coreHttpClient2['default'].get('/api/content?path=' + state.path));
-  
-          case 2:
-            content = context$2$0.sent;
-            return context$2$0.abrupt('return', content && _react2['default'].createElement(_componentsContentPage2['default'], content));
-  
-          case 4:
           case 'end':
             return context$2$0.stop();
         }
@@ -2573,7 +1764,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 30 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -2586,7 +1777,7 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
   
-  var _fs = __webpack_require__(51);
+  var _fs = __webpack_require__(35);
   
   var _fs2 = _interopRequireDefault(_fs);
   
@@ -2612,7 +1803,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 31 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(3)();
@@ -2626,35 +1817,7 @@ module.exports =
 
 
 /***/ },
-/* 32 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(3)();
-  // imports
-  
-  
-  // module
-  exports.push([module.id, "/* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */\n\n/* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */\n\n:root {\n\n  /*\n   * Colors\n   * ======================================================================== */ /* #222 */   /* #404040 */ /* #555 */ /* #777 */ /* #eee */\n\n  /*\n   * Typography\n   * ======================================================================== */\n\n  /*\n   * Layout\n   * ======================================================================== */\n\n  /*\n   * Media queries breakpoints\n   * ======================================================================== */  /* Extra small screen / phone */  /* Small screen / tablet */  /* Medium screen / desktop */ /* Large screen / wide desktop */\n\n  /*\n   * Animations\n   * ======================================================================== */\n\n}\n\n.ContactPage-container {\n  margin: 0 auto;\n  padding: 0 0 40px;\n  max-width: 1000px;\n}\n", ""]);
-  
-  // exports
-
-
-/***/ },
-/* 33 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(3)();
-  // imports
-  
-  
-  // module
-  exports.push([module.id, "/* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */\n\n/* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */\n\n:root {\n\n  /*\n   * Colors\n   * ======================================================================== */ /* #222 */   /* #404040 */ /* #555 */ /* #777 */ /* #eee */\n\n  /*\n   * Typography\n   * ======================================================================== */\n\n  /*\n   * Layout\n   * ======================================================================== */\n\n  /*\n   * Media queries breakpoints\n   * ======================================================================== */  /* Extra small screen / phone */  /* Small screen / tablet */  /* Medium screen / desktop */ /* Large screen / wide desktop */\n\n  /*\n   * Animations\n   * ======================================================================== */\n\n}\n\n.ContentPage-container {\n  margin: 0 auto;\n  padding: 0 0 40px;\n  max-width: 1000px;\n}\n", ""]);
-  
-  // exports
-
-
-/***/ },
-/* 34 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(3)();
@@ -2668,7 +1831,7 @@ module.exports =
 
 
 /***/ },
-/* 35 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(3)();
@@ -2676,69 +1839,13 @@ module.exports =
   
   
   // module
-  exports.push([module.id, "/* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */\n\n/* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */\n\n:root {\n\n  /*\n   * Colors\n   * ======================================================================== */ /* #222 */   /* #404040 */ /* #555 */ /* #777 */ /* #eee */\n\n  /*\n   * Typography\n   * ======================================================================== */\n\n  /*\n   * Layout\n   * ======================================================================== */\n\n  /*\n   * Media queries breakpoints\n   * ======================================================================== */  /* Extra small screen / phone */  /* Small screen / tablet */  /* Medium screen / desktop */ /* Large screen / wide desktop */\n\n  /*\n   * Animations\n   * ======================================================================== */\n\n}\n\n.Feedback {\n  background: #f5f5f5;\n  color: #333;\n}\n\n.Feedback-container {\n  margin: 0 auto;\n  padding: 20px 8px;\n  max-width: 1000px;\n  text-align: center;\n  font-size: 1.5em; /* ~24px */\n}\n\n.Feedback-link,\n.Feedback-link:active,\n.Feedback-link:hover,\n.Feedback-link:visited {\n  color: #333;\n  text-decoration: none;\n}\n\n.Feedback-link:hover {\n  text-decoration: underline;\n}\n\n.Feedback-spacer {\n  padding-right: 15px;\n  padding-left: 15px;\n}\n", ""]);
+  exports.push([module.id, "/* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */\n\n/* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */\n\n:root {\n\n  /*\n   * Colors\n   * ======================================================================== */ /* #222 */   /* #404040 */ /* #555 */ /* #777 */ /* #eee */\n\n  /*\n   * Typography\n   * ======================================================================== */\n\n  /*\n   * Layout\n   * ======================================================================== */\n\n  /*\n   * Media queries breakpoints\n   * ======================================================================== */  /* Extra small screen / phone */  /* Small screen / tablet */  /* Medium screen / desktop */ /* Large screen / wide desktop */\n\n  /*\n   * Animations\n   * ======================================================================== */\n\n}\n\n.Header {\n  background: #373277;\n  color: #fff;\n}\n\n.Header-container {\n  margin: 0 auto;\n  padding: 20px 0;\n  max-width: 1000px;\n}\n\n.Header-brand {\n  color: rgb(146, 229, 252);\n  text-decoration: none;\n  font-size: 1.75em; /* ~28px */\n}\n\n.Header-brandTxt {\n  margin-left: 0px;\n}\n\n.Header-nav {\n  float: right;\n  margin-top: 6px;\n}\n\n.Header-banner {\n  text-align: center;\n}\n\n.Header-bannerTitle {\n  margin: 0;\n  padding: 10px;\n  font-weight: normal;\n  font-size: 4em;\n  line-height: 1em;\n}\n\n.Header-bannerDesc {\n  padding: 0;\n  color: #FFFFFF;\n  color: rgba(255, 255, 255, .5);\n  font-size: 1.25em;\n  margin: 0;\n}\n", ""]);
   
   // exports
 
 
 /***/ },
-/* 36 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(3)();
-  // imports
-  
-  
-  // module
-  exports.push([module.id, "/* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */\n\n/* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */\n\n:root {\n\n  /*\n   * Colors\n   * ======================================================================== */ /* #222 */   /* #404040 */ /* #555 */ /* #777 */ /* #eee */\n\n  /*\n   * Typography\n   * ======================================================================== */\n\n  /*\n   * Layout\n   * ======================================================================== */\n\n  /*\n   * Media queries breakpoints\n   * ======================================================================== */  /* Extra small screen / phone */  /* Small screen / tablet */  /* Medium screen / desktop */ /* Large screen / wide desktop */\n\n  /*\n   * Animations\n   * ======================================================================== */\n\n}\n\n.Footer {\n  background: #333;\n  color: #fff;\n}\n\n.Footer-container {\n  margin: 0 auto;\n  padding: 20px 15px;\n  max-width: 1000px;\n  text-align: center;\n}\n\n.Footer-text {\n  color: #FFFFFF;\n  color: rgba(255, 255, 255, .5);\n}\n\n.Footer-text--muted {\n  color: #FFFFFF;\n  color: rgba(255, 255, 255, .3);\n}\n\n.Footer-spacer {\n  color: #FFFFFF;\n  color: rgba(255, 255, 255, .3);\n}\n\n.Footer-text,\n.Footer-link {\n  padding: 2px 5px;\n  font-size: 1em;\n}\n\n.Footer-link,\n.Footer-link:active,\n.Footer-link:visited {\n  color: #FFFFFF;\n  color: rgba(255, 255, 255, .6);\n  text-decoration: none;\n}\n\n.Footer-link:hover {\n  color: rgba(255, 255, 255, 1);\n}\n", ""]);
-  
-  // exports
-
-
-/***/ },
-/* 37 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(3)();
-  // imports
-  
-  
-  // module
-  exports.push([module.id, "/* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */\n\n/* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */\n\n:root {\n\n  /*\n   * Colors\n   * ======================================================================== */ /* #222 */   /* #404040 */ /* #555 */ /* #777 */ /* #eee */\n\n  /*\n   * Typography\n   * ======================================================================== */\n\n  /*\n   * Layout\n   * ======================================================================== */\n\n  /*\n   * Media queries breakpoints\n   * ======================================================================== */  /* Extra small screen / phone */  /* Small screen / tablet */  /* Medium screen / desktop */ /* Large screen / wide desktop */\n\n  /*\n   * Animations\n   * ======================================================================== */\n\n}\n\n.Header {\n  background: #373277;\n  color: #fff;\n}\n\n.Header-container {\n  margin: 0 auto;\n  padding: 20px 0;\n  max-width: 1000px;\n}\n\n.Header-brand {\n  color: rgb(146, 229, 252);\n  text-decoration: none;\n  font-size: 1.75em; /* ~28px */\n}\n\n.Header-brandTxt {\n  margin-left: 10px;\n}\n\n.Header-nav {\n  float: right;\n  margin-top: 6px;\n}\n\n.Header-banner {\n  text-align: center;\n}\n\n.Header-bannerTitle {\n  margin: 0;\n  padding: 10px;\n  font-weight: normal;\n  font-size: 4em;\n  line-height: 1em;\n}\n\n.Header-bannerDesc {\n  padding: 0;\n  color: #FFFFFF;\n  color: rgba(255, 255, 255, .5);\n  font-size: 1.25em;\n  margin: 0;\n}\n", ""]);
-  
-  // exports
-
-
-/***/ },
-/* 38 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(3)();
-  // imports
-  
-  
-  // module
-  exports.push([module.id, "/* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */\n\n/* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */\n\n:root {\n\n  /*\n   * Colors\n   * ======================================================================== */ /* #222 */   /* #404040 */ /* #555 */ /* #777 */ /* #eee */\n\n  /*\n   * Typography\n   * ======================================================================== */\n\n  /*\n   * Layout\n   * ======================================================================== */\n\n  /*\n   * Media queries breakpoints\n   * ======================================================================== */  /* Extra small screen / phone */  /* Small screen / tablet */  /* Medium screen / desktop */ /* Large screen / wide desktop */\n\n  /*\n   * Animations\n   * ======================================================================== */\n\n}\n\n.LoginPage-container {\n  margin: 0 auto;\n  padding: 0 0 40px;\n  max-width: 1000px;\n}\n", ""]);
-  
-  // exports
-
-
-/***/ },
-/* 39 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(3)();
-  // imports
-  
-  
-  // module
-  exports.push([module.id, "/* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */\n\n.Navigation-link {\n  display: inline-block;\n  padding: 3px 8px;\n  text-decoration: none;\n  font-size: 1.125em; /* ~18px */\n}\n\n.Navigation-link,\n.Navigation-link:active,\n.Navigation-link:visited {\n  color: #FFFFFF;\n  color: rgba(255, 255, 255, .6);\n}\n\n.Navigation-link:hover {\n  color: rgba(255, 255, 255, 1);\n}\n\n.Navigation-link--highlight {\n  margin-right: 8px;\n  margin-left: 8px;\n  border-radius: 3px;\n  background: #000000;\n  background: rgba(0, 0, 0, .15);\n  color: #fff;\n}\n\n.Navigation-link--highlight:hover {\n  background: #000000;\n  background: rgba(0, 0, 0, .3);\n}\n\n.Navigation-spacer {\n  color: #FFFFFF;\n  color: rgba(255, 255, 255, .3);\n}\n", ""]);
-  
-  // exports
-
-
-/***/ },
-/* 40 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(3)();
@@ -2752,7 +1859,7 @@ module.exports =
 
 
 /***/ },
-/* 41 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(3)();
@@ -2760,16 +1867,25 @@ module.exports =
   
   
   // module
-  exports.push([module.id, "/* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */\n\n/* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */\n\n:root {\n\n  /*\n   * Colors\n   * ======================================================================== */ /* #222 */   /* #404040 */ /* #555 */ /* #777 */ /* #eee */\n\n  /*\n   * Typography\n   * ======================================================================== */\n\n  /*\n   * Layout\n   * ======================================================================== */\n\n  /*\n   * Media queries breakpoints\n   * ======================================================================== */  /* Extra small screen / phone */  /* Small screen / tablet */  /* Medium screen / desktop */ /* Large screen / wide desktop */\n\n  /*\n   * Animations\n   * ======================================================================== */\n\n}\n\n.RegisterPage-container {\n  margin: 0 auto;\n  padding: 0 0 40px;\n  max-width: 1000px;\n}\n", ""]);
+  exports.push([module.id, ".SearchBox {\n  width: 100%;\n  margin-top: 100px;\n}\n.SearchBox input{\n  position: fixed;\n  left: 50%;\n  border-width: 4px;\n  height: 30px;\n  -webkit-transform: translate(-50%, -50%);\n      -ms-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  width: 40%;\n  min-width: 200px;\n}\n", ""]);
   
   // exports
 
 
 /***/ },
-/* 42 */
+/* 29 */
+/***/ function(module, exports) {
+
+  module.exports = Array.isArray || function (arr) {
+    return Object.prototype.toString.call(arr) == '[object Array]';
+  };
+
+
+/***/ },
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
-  var isarray = __webpack_require__(43)
+  var isarray = __webpack_require__(29)
   
   /**
    * Expose `pathToRegexp`.
@@ -3162,94 +2278,67 @@ module.exports =
 
 
 /***/ },
-/* 43 */
-/***/ function(module, exports) {
-
-  module.exports = Array.isArray || function (arr) {
-    return Object.prototype.toString.call(arr) == '[object Array]';
-  };
-
-
-/***/ },
-/* 44 */
-/***/ function(module, exports) {
-
-  module.exports = "data:image/png;base64,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"
-
-/***/ },
-/* 45 */
+/* 31 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-core/polyfill");
 
 /***/ },
-/* 46 */
-/***/ function(module, exports) {
-
-  module.exports = require("classnames");
-
-/***/ },
-/* 47 */
-/***/ function(module, exports) {
-
-  module.exports = require("eventemitter3");
-
-/***/ },
-/* 48 */
+/* 32 */
 /***/ function(module, exports) {
 
   module.exports = require("fbjs/lib/emptyFunction");
 
 /***/ },
-/* 49 */
+/* 33 */
 /***/ function(module, exports) {
 
   module.exports = require("fbjs/lib/invariant");
 
 /***/ },
-/* 50 */
+/* 34 */
 /***/ function(module, exports) {
 
   module.exports = require("front-matter");
 
 /***/ },
-/* 51 */
+/* 35 */
 /***/ function(module, exports) {
 
   module.exports = require("fs");
 
 /***/ },
-/* 52 */
+/* 36 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/createBrowserHistory");
 
 /***/ },
-/* 53 */
+/* 37 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/createMemoryHistory");
 
 /***/ },
-/* 54 */
+/* 38 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/useQueries");
 
 /***/ },
-/* 55 */
+/* 39 */
 /***/ function(module, exports) {
 
   module.exports = require("jade");
 
 /***/ },
-/* 56 */
+/* 40 */
 /***/ function(module, exports) {
 
   module.exports = require("react-dom/server");
 
 /***/ },
-/* 57 */
+/* 41 */
 /***/ function(module, exports) {
 
   module.exports = require("superagent");
