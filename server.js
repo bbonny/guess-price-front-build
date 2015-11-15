@@ -1312,7 +1312,7 @@ module.exports =
               _react2['default'].createElement(
                 'span',
                 { className: 'Header-brandTxt' },
-                'GimmeTheFuckingPrice'
+                'Home'
               )
             )
           )
@@ -1554,8 +1554,11 @@ module.exports =
           null,
           _react2['default'].createElement(
             'a',
-            { href: this.props.result.url },
-            this.props.result.label
+            { href: this.props.result.url, target: '_BLANK' },
+            this.props.result.label,
+            ' (',
+            this.props.result.description,
+            ')'
           )
         );
       }
@@ -2057,7 +2060,7 @@ module.exports =
   
   
   // module
-  exports.push([module.id, ".SearchBox {\n  margin-top: 100px;\n}\n", ""]);
+  exports.push([module.id, ".SearchBox {\n  margin-top: 20px;\n}\n", ""]);
   
   // exports
 
