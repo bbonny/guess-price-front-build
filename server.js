@@ -54,7 +54,7 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
   
-  __webpack_require__(31);
+  __webpack_require__(32);
   
   var _path = __webpack_require__(8);
   
@@ -68,11 +68,11 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _reactDomServer = __webpack_require__(44);
+  var _reactDomServer = __webpack_require__(45);
   
   var _reactDomServer2 = _interopRequireDefault(_reactDomServer);
   
-  var _routes = __webpack_require__(22);
+  var _routes = __webpack_require__(23);
   
   var _routes2 = _interopRequireDefault(_routes);
   
@@ -204,11 +204,11 @@ module.exports =
   
   // eslint-disable-line no-unused-vars
   
-  var _fbjsLibInvariant = __webpack_require__(33);
+  var _fbjsLibInvariant = __webpack_require__(34);
   
   var _fbjsLibInvariant2 = _interopRequireDefault(_fbjsLibInvariant);
   
-  var _fbjsLibExecutionEnvironment = __webpack_require__(4);
+  var _fbjsLibExecutionEnvironment = __webpack_require__(5);
   
   var count = 0;
   
@@ -358,12 +358,6 @@ module.exports =
 
 /***/ },
 /* 4 */
-/***/ function(module, exports) {
-
-  module.exports = require("fbjs/lib/ExecutionEnvironment");
-
-/***/ },
-/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -394,7 +388,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _coreLocation = __webpack_require__(20);
+  var _coreLocation = __webpack_require__(21);
   
   var _coreLocation2 = _interopRequireDefault(_coreLocation);
   
@@ -470,6 +464,12 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+  module.exports = require("fbjs/lib/ExecutionEnvironment");
+
+/***/ },
 /* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -483,11 +483,11 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
   
-  var _superagent = __webpack_require__(45);
+  var _superagent = __webpack_require__(46);
   
   var _superagent2 = _interopRequireDefault(_superagent);
   
-  var _fbjsLibExecutionEnvironment = __webpack_require__(4);
+  var _fbjsLibExecutionEnvironment = __webpack_require__(5);
   
   function getUrl(path) {
     if (path.startsWith('http') || _fbjsLibExecutionEnvironment.canUseDOM) {
@@ -599,7 +599,7 @@ module.exports =
   
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
   
-  var _pathToRegexp = __webpack_require__(30);
+  var _pathToRegexp = __webpack_require__(31);
   
   var _pathToRegexp2 = _interopRequireDefault(_pathToRegexp);
   
@@ -977,15 +977,15 @@ module.exports =
   
   var _express = __webpack_require__(7);
   
-  var _jade = __webpack_require__(39);
+  var _jade = __webpack_require__(40);
   
   var _jade2 = _interopRequireDefault(_jade);
   
-  var _frontMatter = __webpack_require__(34);
+  var _frontMatter = __webpack_require__(35);
   
   var _frontMatter2 = _interopRequireDefault(_frontMatter);
   
-  var _utilsFs = __webpack_require__(23);
+  var _utilsFs = __webpack_require__(24);
   
   var _utilsFs2 = _interopRequireDefault(_utilsFs);
   
@@ -1120,11 +1120,11 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _AppCss = __webpack_require__(24);
+  var _AppCss = __webpack_require__(25);
   
   var _AppCss2 = _interopRequireDefault(_AppCss);
   
-  var _decoratorsWithContext = __webpack_require__(21);
+  var _decoratorsWithContext = __webpack_require__(22);
   
   var _decoratorsWithContext2 = _interopRequireDefault(_decoratorsWithContext);
   
@@ -1136,7 +1136,7 @@ module.exports =
   
   var _Header2 = _interopRequireDefault(_Header);
   
-  var _SearchBox = __webpack_require__(18);
+  var _SearchBox = __webpack_require__(19);
   
   var _SearchBox2 = _interopRequireDefault(_SearchBox);
   
@@ -1200,7 +1200,7 @@ module.exports =
   
   var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
   
-  var _ErrorPageCss = __webpack_require__(25);
+  var _ErrorPageCss = __webpack_require__(26);
   
   var _ErrorPageCss2 = _interopRequireDefault(_ErrorPageCss);
   
@@ -1276,7 +1276,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _HeaderCss = __webpack_require__(26);
+  var _HeaderCss = __webpack_require__(27);
   
   var _HeaderCss2 = _interopRequireDefault(_HeaderCss);
   
@@ -1284,7 +1284,7 @@ module.exports =
   
   var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
   
-  var _Link = __webpack_require__(5);
+  var _Link = __webpack_require__(4);
   
   var _Link2 = _interopRequireDefault(_Link);
   
@@ -1354,7 +1354,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _config = __webpack_require__(19);
+  var _config = __webpack_require__(20);
   
   var Html = (function (_Component) {
     _inherits(Html, _Component);
@@ -1458,7 +1458,7 @@ module.exports =
   
   var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
   
-  var _NotFoundPageCss = __webpack_require__(27);
+  var _NotFoundPageCss = __webpack_require__(28);
   
   var _NotFoundPageCss2 = _interopRequireDefault(_NotFoundPageCss);
   
@@ -1533,23 +1533,81 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _reactBootstrapLibInput = __webpack_require__(42);
+  var _Link = __webpack_require__(4);
+  
+  var _Link2 = _interopRequireDefault(_Link);
+  
+  var SCSmallEntry = (function (_Component) {
+    _inherits(SCSmallEntry, _Component);
+  
+    function SCSmallEntry() {
+      _classCallCheck(this, SCSmallEntry);
+  
+      _get(Object.getPrototypeOf(SCSmallEntry.prototype), 'constructor', this).apply(this, arguments);
+    }
+  
+    _createClass(SCSmallEntry, [{
+      key: 'render',
+      value: function render() {
+        return _react2['default'].createElement(
+          'div',
+          null,
+          _react2['default'].createElement(
+            'a',
+            { href: this.props.result.url },
+            this.props.result.label
+          )
+        );
+      }
+    }]);
+  
+    return SCSmallEntry;
+  })(_react.Component);
+  
+  exports['default'] = SCSmallEntry;
+  module.exports = exports['default'];
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, '__esModule', {
+    value: true
+  });
+  
+  var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+  
+  var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+  
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+  
+  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+  
+  var _react = __webpack_require__(1);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _reactBootstrapLibInput = __webpack_require__(43);
   
   var _reactBootstrapLibInput2 = _interopRequireDefault(_reactBootstrapLibInput);
   
-  var _reactBootstrapLibCol = __webpack_require__(41);
+  var _reactBootstrapLibCol = __webpack_require__(42);
   
   var _reactBootstrapLibCol2 = _interopRequireDefault(_reactBootstrapLibCol);
   
-  var _reactBootstrapLibRow = __webpack_require__(43);
+  var _reactBootstrapLibRow = __webpack_require__(44);
   
   var _reactBootstrapLibRow2 = _interopRequireDefault(_reactBootstrapLibRow);
   
-  var _jquery = __webpack_require__(40);
+  var _jquery = __webpack_require__(41);
   
   var _jquery2 = _interopRequireDefault(_jquery);
   
-  var _SearchBoxCss = __webpack_require__(28);
+  var _SearchBoxCss = __webpack_require__(29);
   
   var _SearchBoxCss2 = _interopRequireDefault(_SearchBoxCss);
   
@@ -1557,9 +1615,13 @@ module.exports =
   
   var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
   
-  var _Link = __webpack_require__(5);
+  var _Link = __webpack_require__(4);
   
   var _Link2 = _interopRequireDefault(_Link);
+  
+  var _SCSmallEntry = __webpack_require__(18);
+  
+  var _SCSmallEntry2 = _interopRequireDefault(_SCSmallEntry);
   
   var SearchBox = (function (_Component) {
     _inherits(SearchBox, _Component);
@@ -1592,7 +1654,7 @@ module.exports =
           list.push(_react2['default'].createElement(
             _reactBootstrapLibRow2['default'],
             null,
-            result.label
+            _react2['default'].createElement(_SCSmallEntry2['default'], { result: result })
           ));
         });
         return list;
@@ -1659,7 +1721,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -1675,7 +1737,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -1688,17 +1750,17 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
   
-  var _fbjsLibExecutionEnvironment = __webpack_require__(4);
+  var _fbjsLibExecutionEnvironment = __webpack_require__(5);
   
-  var _historyLibCreateBrowserHistory = __webpack_require__(36);
+  var _historyLibCreateBrowserHistory = __webpack_require__(37);
   
   var _historyLibCreateBrowserHistory2 = _interopRequireDefault(_historyLibCreateBrowserHistory);
   
-  var _historyLibCreateMemoryHistory = __webpack_require__(37);
+  var _historyLibCreateMemoryHistory = __webpack_require__(38);
   
   var _historyLibCreateMemoryHistory2 = _interopRequireDefault(_historyLibCreateMemoryHistory);
   
-  var _historyLibUseQueries = __webpack_require__(38);
+  var _historyLibUseQueries = __webpack_require__(39);
   
   var _historyLibUseQueries2 = _interopRequireDefault(_historyLibUseQueries);
   
@@ -1708,7 +1770,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -1737,7 +1799,7 @@ module.exports =
   
   // eslint-disable-line no-unused-vars
   
-  var _fbjsLibEmptyFunction = __webpack_require__(32);
+  var _fbjsLibEmptyFunction = __webpack_require__(33);
   
   var _fbjsLibEmptyFunction2 = _interopRequireDefault(_fbjsLibEmptyFunction);
   
@@ -1803,7 +1865,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -1892,7 +1954,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -1905,7 +1967,7 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
   
-  var _fs = __webpack_require__(35);
+  var _fs = __webpack_require__(36);
   
   var _fs2 = _interopRequireDefault(_fs);
   
@@ -1931,7 +1993,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 24 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(3)();
@@ -1945,7 +2007,7 @@ module.exports =
 
 
 /***/ },
-/* 25 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(3)();
@@ -1959,7 +2021,7 @@ module.exports =
 
 
 /***/ },
-/* 26 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(3)();
@@ -1973,7 +2035,7 @@ module.exports =
 
 
 /***/ },
-/* 27 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(3)();
@@ -1987,7 +2049,7 @@ module.exports =
 
 
 /***/ },
-/* 28 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(3)();
@@ -2001,7 +2063,7 @@ module.exports =
 
 
 /***/ },
-/* 29 */
+/* 30 */
 /***/ function(module, exports) {
 
   module.exports = Array.isArray || function (arr) {
@@ -2010,10 +2072,10 @@ module.exports =
 
 
 /***/ },
-/* 30 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
-  var isarray = __webpack_require__(29)
+  var isarray = __webpack_require__(30)
   
   /**
    * Expose `pathToRegexp`.
@@ -2406,91 +2468,91 @@ module.exports =
 
 
 /***/ },
-/* 31 */
+/* 32 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-core/polyfill");
 
 /***/ },
-/* 32 */
+/* 33 */
 /***/ function(module, exports) {
 
   module.exports = require("fbjs/lib/emptyFunction");
 
 /***/ },
-/* 33 */
+/* 34 */
 /***/ function(module, exports) {
 
   module.exports = require("fbjs/lib/invariant");
 
 /***/ },
-/* 34 */
+/* 35 */
 /***/ function(module, exports) {
 
   module.exports = require("front-matter");
 
 /***/ },
-/* 35 */
+/* 36 */
 /***/ function(module, exports) {
 
   module.exports = require("fs");
 
 /***/ },
-/* 36 */
+/* 37 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/createBrowserHistory");
 
 /***/ },
-/* 37 */
+/* 38 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/createMemoryHistory");
 
 /***/ },
-/* 38 */
+/* 39 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/useQueries");
 
 /***/ },
-/* 39 */
+/* 40 */
 /***/ function(module, exports) {
 
   module.exports = require("jade");
 
 /***/ },
-/* 40 */
+/* 41 */
 /***/ function(module, exports) {
 
   module.exports = require("jquery");
 
 /***/ },
-/* 41 */
+/* 42 */
 /***/ function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/Col");
 
 /***/ },
-/* 42 */
+/* 43 */
 /***/ function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/Input");
 
 /***/ },
-/* 43 */
+/* 44 */
 /***/ function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/Row");
 
 /***/ },
-/* 44 */
+/* 45 */
 /***/ function(module, exports) {
 
   module.exports = require("react-dom/server");
 
 /***/ },
-/* 45 */
+/* 46 */
 /***/ function(module, exports) {
 
   module.exports = require("superagent");
