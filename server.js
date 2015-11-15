@@ -500,8 +500,9 @@ module.exports =
   var HttpClient = {
   
     get: function get(path) {
+      var headers = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
       return new Promise(function (resolve, reject) {
-        _superagent2['default'].get(getUrl(path)).set('X-Requested-With', 'XMLHttpRequest').accept('application/json').end(function (err, res) {
+        _superagent2['default'].get(getUrl(path)).set(headers).accept('application/json').end(function (err, res) {
           if (err) {
             if (err.status === 404) {
               resolve(null);
@@ -1005,8 +1006,7 @@ module.exports =
   var router = new _express.Router();
   
   router.get('/', function callee$0$0(req, res, next) {
-    var path, q, content, fileName, source, _content;
-  
+    var path, q, content, fileName, source;
     return regeneratorRuntime.async(function callee$0$0$(context$1$0) {
       while (1) switch (context$1$0.prev = context$1$0.next) {
         case 0:
@@ -1023,71 +1023,72 @@ module.exports =
   
         case 5:
           if (!(path == "ss")) {
-            context$1$0.next = 11;
+            context$1$0.next = 12;
             break;
           }
   
           q = req.query.q;
           context$1$0.next = 9;
-          return regeneratorRuntime.awrap(_coreHttpClient2['default'].get('http://www.senscritique.com/sc/search/autocomplete.json?query=' + q));
+          return regeneratorRuntime.awrap(_coreHttpClient2['default'].get('http://www.senscritique.com/sc/search/autocomplete.json?query=' + q, { 'X-Requested-With': 'XMLHttpRequest' }));
   
         case 9:
           content = context$1$0.sent;
   
           res.status(200).send(content);
+          return context$1$0.abrupt('return');
   
-        case 11:
+        case 12:
           fileName = (0, _path.join)(CONTENT_DIR, (path === '/' ? '/index' : path) + '.jade');
-          context$1$0.next = 14;
+          context$1$0.next = 15;
           return regeneratorRuntime.awrap(_utilsFs2['default'].exists(fileName));
   
-        case 14:
+        case 15:
           if (context$1$0.sent) {
-            context$1$0.next = 16;
+            context$1$0.next = 17;
             break;
           }
   
           fileName = (0, _path.join)(CONTENT_DIR, path + '/index.jade');
   
-        case 16:
-          context$1$0.next = 18;
+        case 17:
+          context$1$0.next = 19;
           return regeneratorRuntime.awrap(_utilsFs2['default'].exists(fileName));
   
-        case 18:
+        case 19:
           if (context$1$0.sent) {
-            context$1$0.next = 22;
+            context$1$0.next = 23;
             break;
           }
   
           res.status(404).send({ error: 'The page \'' + path + '\' is not found.' });
-          context$1$0.next = 27;
+          context$1$0.next = 28;
           break;
   
-        case 22:
-          context$1$0.next = 24;
+        case 23:
+          context$1$0.next = 25;
           return regeneratorRuntime.awrap(_utilsFs2['default'].readFile(fileName, { encoding: 'utf8' }));
   
-        case 24:
+        case 25:
           source = context$1$0.sent;
-          _content = parseJade(path, source);
+          content = parseJade(path, source);
   
-          res.status(200).send(_content);
+          res.status(200).send(content);
   
-        case 27:
-          context$1$0.next = 32;
+        case 28:
+          context$1$0.next = 33;
           break;
   
-        case 29:
-          context$1$0.prev = 29;
+        case 30:
+          context$1$0.prev = 30;
           context$1$0.t0 = context$1$0['catch'](0);
   
           next(context$1$0.t0);
   
-        case 32:
+        case 33:
         case 'end':
           return context$1$0.stop();
       }
-    }, null, _this, [[0, 29]]);
+    }, null, _this, [[0, 30]]);
   });
   
   exports['default'] = router;
@@ -1573,7 +1574,7 @@ module.exports =
       this.getResults = function (q) {
         _jquery2['default'].get('/api/content?path=ss&q=' + q, function (results) {
           _this.setState({
-            results: JSON.stringify(results)
+            results: results.json
           });
         });
       };
@@ -1584,14 +1585,26 @@ module.exports =
           value: _this.refs.input.getValue()
         });
       };
+  
+      this.renderResults = function (results) {
+        var list = [];
+        results.forEach(function (result) {
+          list.push(_react2['default'].createElement(
+            _reactBootstrapLibRow2['default'],
+            null,
+            result.label
+          ));
+        });
+        return list;
+      };
     }
   
     _createClass(SearchBox, [{
       key: 'render',
       value: function render() {
         var results = '';
-        if (this.state) {
-          results = this.state.results;
+        if (this.state && this.state.results) {
+          results = this.renderResults(this.state.results);
         }
         return _react2['default'].createElement(
           'div',
@@ -1617,13 +1630,13 @@ module.exports =
           _react2['default'].createElement(
             _reactBootstrapLibRow2['default'],
             null,
-            _react2['default'].createElement(_reactBootstrapLibCol2['default'], { xs: 3, md: 4 }),
+            _react2['default'].createElement(_reactBootstrapLibCol2['default'], { xs: 4, md: 5 }),
             _react2['default'].createElement(
               _reactBootstrapLibCol2['default'],
-              { xs: 6, md: 4 },
+              { xs: 5, md: 3 },
               results
             ),
-            _react2['default'].createElement(_reactBootstrapLibCol2['default'], { xs: 3, md: 4 })
+            _react2['default'].createElement(_reactBootstrapLibCol2['default'], { xs: 3, md: 2 })
           )
         );
       }
@@ -1631,7 +1644,8 @@ module.exports =
       key: 'getInitialState',
       value: function getInitialState() {
         return {
-          value: ''
+          value: '',
+          results: []
         };
       }
     }]);
