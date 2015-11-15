@@ -68,7 +68,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _reactDomServer = __webpack_require__(40);
+  var _reactDomServer = __webpack_require__(43);
   
   var _reactDomServer2 = _interopRequireDefault(_reactDomServer);
   
@@ -1318,6 +1318,9 @@ module.exports =
             _react2['default'].createElement('meta', { name: 'description', content: this.props.description }),
             _react2['default'].createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1' }),
             _react2['default'].createElement('link', { rel: 'apple-touch-icon', href: 'apple-touch-icon.png' }),
+            _react2['default'].createElement('link', {
+              rel: 'stylesheet',
+              href: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' }),
             _react2['default'].createElement('style', { id: 'css', dangerouslySetInnerHTML: { __html: this.props.css } })
           ),
           _react2['default'].createElement(
@@ -1458,6 +1461,18 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
+  var _reactBootstrapLibInput = __webpack_require__(41);
+  
+  var _reactBootstrapLibInput2 = _interopRequireDefault(_reactBootstrapLibInput);
+  
+  var _reactBootstrapLibCol = __webpack_require__(40);
+  
+  var _reactBootstrapLibCol2 = _interopRequireDefault(_reactBootstrapLibCol);
+  
+  var _reactBootstrapLibRow = __webpack_require__(42);
+  
+  var _reactBootstrapLibRow2 = _interopRequireDefault(_reactBootstrapLibRow);
+  
   var _SearchBoxCss = __webpack_require__(28);
   
   var _SearchBoxCss2 = _interopRequireDefault(_SearchBoxCss);
@@ -1485,7 +1500,23 @@ module.exports =
         return _react2['default'].createElement(
           'div',
           { className: 'SearchBox' },
-          _react2['default'].createElement('input', { type: 'text', autofocus: true, placholder: 'Model' })
+          _react2['default'].createElement(
+            _reactBootstrapLibRow2['default'],
+            { className: 'show-grid' },
+            _react2['default'].createElement(_reactBootstrapLibCol2['default'], { xs: 3, md: 4 }),
+            _react2['default'].createElement(
+              _reactBootstrapLibCol2['default'],
+              { xs: 6, md: 4 },
+              _react2['default'].createElement(_reactBootstrapLibInput2['default'], {
+                type: 'text',
+                placeholder: 'Enter text',
+                hasFeedback: true,
+                ref: 'input',
+                groupClassName: 'group-class',
+                labelClassName: 'label-class' })
+            ),
+            _react2['default'].createElement(_reactBootstrapLibCol2['default'], { xs: 3, md: 4 })
+          )
         );
       }
     }]);
@@ -1528,7 +1559,7 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
   
-  var _superagent = __webpack_require__(41);
+  var _superagent = __webpack_require__(44);
   
   var _superagent2 = _interopRequireDefault(_superagent);
   
@@ -1867,7 +1898,7 @@ module.exports =
   
   
   // module
-  exports.push([module.id, ".SearchBox {\n  width: 100%;\n  margin-top: 100px;\n}\n.SearchBox input{\n  position: fixed;\n  left: 50%;\n  border-width: 4px;\n  height: 30px;\n  -webkit-transform: translate(-50%, -50%);\n      -ms-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  width: 40%;\n  min-width: 270px;\n}\n", ""]);
+  exports.push([module.id, ".SearchBox {\n  margin-top: 100px;\n}\n", ""]);
   
   // exports
 
@@ -2335,10 +2366,28 @@ module.exports =
 /* 40 */
 /***/ function(module, exports) {
 
-  module.exports = require("react-dom/server");
+  module.exports = require("react-bootstrap/lib/Col");
 
 /***/ },
 /* 41 */
+/***/ function(module, exports) {
+
+  module.exports = require("react-bootstrap/lib/Input");
+
+/***/ },
+/* 42 */
+/***/ function(module, exports) {
+
+  module.exports = require("react-bootstrap/lib/Row");
+
+/***/ },
+/* 43 */
+/***/ function(module, exports) {
+
+  module.exports = require("react-dom/server");
+
+/***/ },
+/* 44 */
 /***/ function(module, exports) {
 
   module.exports = require("superagent");
