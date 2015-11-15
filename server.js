@@ -56,11 +56,11 @@ module.exports =
   
   __webpack_require__(31);
   
-  var _path = __webpack_require__(7);
+  var _path = __webpack_require__(8);
   
   var _path2 = _interopRequireDefault(_path);
   
-  var _express = __webpack_require__(6);
+  var _express = __webpack_require__(7);
   
   var _express2 = _interopRequireDefault(_express);
   
@@ -68,7 +68,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _reactDomServer = __webpack_require__(43);
+  var _reactDomServer = __webpack_require__(44);
   
   var _reactDomServer2 = _interopRequireDefault(_reactDomServer);
   
@@ -76,7 +76,7 @@ module.exports =
   
   var _routes2 = _interopRequireDefault(_routes);
   
-  var _componentsHtml = __webpack_require__(15);
+  var _componentsHtml = __webpack_require__(16);
   
   var _componentsHtml2 = _interopRequireDefault(_componentsHtml);
   
@@ -92,7 +92,7 @@ module.exports =
   //
   // Register API middleware
   // -----------------------------------------------------------------------------
-  server.use('/api/content', __webpack_require__(11));
+  server.use('/api/content', __webpack_require__(12));
   
   //
   // Register server-side rendering middleware
@@ -471,18 +471,69 @@ module.exports =
 
 /***/ },
 /* 6 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-  module.exports = require("express");
+  /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
+  
+  'use strict';
+  
+  Object.defineProperty(exports, '__esModule', {
+    value: true
+  });
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+  
+  var _superagent = __webpack_require__(45);
+  
+  var _superagent2 = _interopRequireDefault(_superagent);
+  
+  var _fbjsLibExecutionEnvironment = __webpack_require__(4);
+  
+  function getUrl(path) {
+    if (path.startsWith('http') || _fbjsLibExecutionEnvironment.canUseDOM) {
+      return path;
+    }
+  
+    return process.env.WEBSITE_HOSTNAME ? 'http://' + process.env.WEBSITE_HOSTNAME + path : 'http://127.0.0.1:' + global.server.get('port') + path;
+  }
+  
+  var HttpClient = {
+  
+    get: function get(path) {
+      return new Promise(function (resolve, reject) {
+        _superagent2['default'].get(getUrl(path)).set('X-Requested-With', 'XMLHttpRequest').accept('application/json').end(function (err, res) {
+          if (err) {
+            if (err.status === 404) {
+              resolve(null);
+            } else {
+              reject(err);
+            }
+          } else {
+            resolve(res.body);
+          }
+        });
+      });
+    }
+  
+  };
+  
+  exports['default'] = HttpClient;
+  module.exports = exports['default'];
 
 /***/ },
 /* 7 */
 /***/ function(module, exports) {
 
-  module.exports = require("path");
+  module.exports = require("express");
 
 /***/ },
 /* 8 */
+/***/ function(module, exports) {
+
+  module.exports = require("path");
+
+/***/ },
+/* 9 */
 /***/ function(module, exports) {
 
   /**
@@ -527,7 +578,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -551,7 +602,7 @@ module.exports =
   
   var _pathToRegexp2 = _interopRequireDefault(_pathToRegexp);
   
-  var _Match = __webpack_require__(8);
+  var _Match = __webpack_require__(9);
   
   var _Match2 = _interopRequireDefault(_Match);
   
@@ -579,7 +630,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -601,7 +652,7 @@ module.exports =
   
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
   
-  var _Route = __webpack_require__(9);
+  var _Route = __webpack_require__(10);
   
   var _Route2 = _interopRequireDefault(_Route);
   
@@ -906,7 +957,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -921,9 +972,9 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
   
-  var _path = __webpack_require__(7);
+  var _path = __webpack_require__(8);
   
-  var _express = __webpack_require__(6);
+  var _express = __webpack_require__(7);
   
   var _jade = __webpack_require__(39);
   
@@ -936,6 +987,10 @@ module.exports =
   var _utilsFs = __webpack_require__(23);
   
   var _utilsFs2 = _interopRequireDefault(_utilsFs);
+  
+  var _coreHttpClient = __webpack_require__(6);
+  
+  var _coreHttpClient2 = _interopRequireDefault(_coreHttpClient);
   
   // A folder with Jade/Markdown/HTML content pages
   var CONTENT_DIR = (0, _path.join)(__dirname, './content');
@@ -950,7 +1005,8 @@ module.exports =
   var router = new _express.Router();
   
   router.get('/', function callee$0$0(req, res, next) {
-    var path, fileName, source, content;
+    var path, q, content, fileName, source, _content;
+  
     return regeneratorRuntime.async(function callee$0$0$(context$1$0) {
       while (1) switch (context$1$0.prev = context$1$0.next) {
         case 0:
@@ -966,64 +1022,79 @@ module.exports =
           return context$1$0.abrupt('return');
   
         case 5:
-          fileName = (0, _path.join)(CONTENT_DIR, (path === '/' ? '/index' : path) + '.jade');
-          context$1$0.next = 8;
-          return regeneratorRuntime.awrap(_utilsFs2['default'].exists(fileName));
-  
-        case 8:
-          if (context$1$0.sent) {
-            context$1$0.next = 10;
+          if (!(path == "ss")) {
+            context$1$0.next = 11;
             break;
           }
   
-          fileName = (0, _path.join)(CONTENT_DIR, path + '/index.jade');
+          q = req.query.q;
+          context$1$0.next = 9;
+          return regeneratorRuntime.awrap(_coreHttpClient2['default'].get('http://www.senscritique.com/sc/search/autocomplete.json?query=' + q));
   
-        case 10:
-          context$1$0.next = 12;
+        case 9:
+          content = context$1$0.sent;
+  
+          res.status(200).send(content);
+  
+        case 11:
+          fileName = (0, _path.join)(CONTENT_DIR, (path === '/' ? '/index' : path) + '.jade');
+          context$1$0.next = 14;
           return regeneratorRuntime.awrap(_utilsFs2['default'].exists(fileName));
   
-        case 12:
+        case 14:
           if (context$1$0.sent) {
             context$1$0.next = 16;
             break;
           }
   
-          res.status(404).send({ error: 'The page \'' + path + '\' is not found.' });
-          context$1$0.next = 21;
-          break;
+          fileName = (0, _path.join)(CONTENT_DIR, path + '/index.jade');
   
         case 16:
           context$1$0.next = 18;
-          return regeneratorRuntime.awrap(_utilsFs2['default'].readFile(fileName, { encoding: 'utf8' }));
+          return regeneratorRuntime.awrap(_utilsFs2['default'].exists(fileName));
   
         case 18:
-          source = context$1$0.sent;
-          content = parseJade(path, source);
+          if (context$1$0.sent) {
+            context$1$0.next = 22;
+            break;
+          }
   
-          res.status(200).send(content);
-  
-        case 21:
-          context$1$0.next = 26;
+          res.status(404).send({ error: 'The page \'' + path + '\' is not found.' });
+          context$1$0.next = 27;
           break;
   
-        case 23:
-          context$1$0.prev = 23;
+        case 22:
+          context$1$0.next = 24;
+          return regeneratorRuntime.awrap(_utilsFs2['default'].readFile(fileName, { encoding: 'utf8' }));
+  
+        case 24:
+          source = context$1$0.sent;
+          _content = parseJade(path, source);
+  
+          res.status(200).send(_content);
+  
+        case 27:
+          context$1$0.next = 32;
+          break;
+  
+        case 29:
+          context$1$0.prev = 29;
           context$1$0.t0 = context$1$0['catch'](0);
   
           next(context$1$0.t0);
   
-        case 26:
+        case 32:
         case 'end':
           return context$1$0.stop();
       }
-    }, null, _this, [[0, 23]]);
+    }, null, _this, [[0, 29]]);
   });
   
   exports['default'] = router;
   module.exports = exports['default'];
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -1060,11 +1131,11 @@ module.exports =
   
   var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
   
-  var _Header = __webpack_require__(14);
+  var _Header = __webpack_require__(15);
   
   var _Header2 = _interopRequireDefault(_Header);
   
-  var _SearchBox = __webpack_require__(17);
+  var _SearchBox = __webpack_require__(18);
   
   var _SearchBox2 = _interopRequireDefault(_SearchBox);
   
@@ -1099,7 +1170,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -1179,7 +1250,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -1257,7 +1328,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -1282,7 +1353,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _config = __webpack_require__(18);
+  var _config = __webpack_require__(19);
   
   var Html = (function (_Component) {
     _inherits(Html, _Component);
@@ -1357,7 +1428,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -1438,7 +1509,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -1461,17 +1532,21 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _reactBootstrapLibInput = __webpack_require__(41);
+  var _reactBootstrapLibInput = __webpack_require__(42);
   
   var _reactBootstrapLibInput2 = _interopRequireDefault(_reactBootstrapLibInput);
   
-  var _reactBootstrapLibCol = __webpack_require__(40);
+  var _reactBootstrapLibCol = __webpack_require__(41);
   
   var _reactBootstrapLibCol2 = _interopRequireDefault(_reactBootstrapLibCol);
   
-  var _reactBootstrapLibRow = __webpack_require__(42);
+  var _reactBootstrapLibRow = __webpack_require__(43);
   
   var _reactBootstrapLibRow2 = _interopRequireDefault(_reactBootstrapLibRow);
+  
+  var _jquery = __webpack_require__(40);
+  
+  var _jquery2 = _interopRequireDefault(_jquery);
   
   var _SearchBoxCss = __webpack_require__(28);
   
@@ -1489,14 +1564,35 @@ module.exports =
     _inherits(SearchBox, _Component);
   
     function SearchBox() {
+      var _this = this;
+  
       _classCallCheck(this, _SearchBox);
   
       _get(Object.getPrototypeOf(_SearchBox.prototype), 'constructor', this).apply(this, arguments);
+  
+      this.getResults = function (q) {
+        _jquery2['default'].get('/api/content?path=ss&q=' + q, function (results) {
+          _this.setState({
+            results: JSON.stringify(results)
+          });
+        });
+      };
+  
+      this.handleChange = function () {
+        _this.getResults(_this.refs.input.getValue());
+        _this.setState({
+          value: _this.refs.input.getValue()
+        });
+      };
     }
   
     _createClass(SearchBox, [{
       key: 'render',
       value: function render() {
+        var results = '';
+        if (this.state) {
+          results = this.state.results;
+        }
         return _react2['default'].createElement(
           'div',
           { className: 'SearchBox' },
@@ -1513,11 +1609,30 @@ module.exports =
                 hasFeedback: true,
                 ref: 'input',
                 groupClassName: 'group-class',
-                labelClassName: 'label-class' })
+                labelClassName: 'label-class',
+                onChange: this.handleChange })
+            ),
+            _react2['default'].createElement(_reactBootstrapLibCol2['default'], { xs: 3, md: 4 })
+          ),
+          _react2['default'].createElement(
+            _reactBootstrapLibRow2['default'],
+            null,
+            _react2['default'].createElement(_reactBootstrapLibCol2['default'], { xs: 3, md: 4 }),
+            _react2['default'].createElement(
+              _reactBootstrapLibCol2['default'],
+              { xs: 6, md: 4 },
+              results
             ),
             _react2['default'].createElement(_reactBootstrapLibCol2['default'], { xs: 3, md: 4 })
           )
         );
+      }
+    }], [{
+      key: 'getInitialState',
+      value: function getInitialState() {
+        return {
+          value: ''
+        };
       }
     }]);
   
@@ -1530,7 +1645,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -1543,57 +1658,6 @@ module.exports =
   exports['default'] = {
     googleAnalyticsId: 'UA-70088073-1'
   };
-  module.exports = exports['default'];
-
-/***/ },
-/* 19 */
-/***/ function(module, exports, __webpack_require__) {
-
-  /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
-  
-  'use strict';
-  
-  Object.defineProperty(exports, '__esModule', {
-    value: true
-  });
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-  
-  var _superagent = __webpack_require__(44);
-  
-  var _superagent2 = _interopRequireDefault(_superagent);
-  
-  var _fbjsLibExecutionEnvironment = __webpack_require__(4);
-  
-  function getUrl(path) {
-    if (path.startsWith('http') || _fbjsLibExecutionEnvironment.canUseDOM) {
-      return path;
-    }
-  
-    return process.env.WEBSITE_HOSTNAME ? 'http://' + process.env.WEBSITE_HOSTNAME + path : 'http://127.0.0.1:' + global.server.get('port') + path;
-  }
-  
-  var HttpClient = {
-  
-    get: function get(path) {
-      return new Promise(function (resolve, reject) {
-        _superagent2['default'].get(getUrl(path)).accept('application/json').end(function (err, res) {
-          if (err) {
-            if (err.status === 404) {
-              resolve(null);
-            } else {
-              reject(err);
-            }
-          } else {
-            resolve(res.body);
-          }
-        });
-      });
-    }
-  
-  };
-  
-  exports['default'] = HttpClient;
   module.exports = exports['default'];
 
 /***/ },
@@ -1744,23 +1808,23 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _reactRoutingSrcRouter = __webpack_require__(10);
+  var _reactRoutingSrcRouter = __webpack_require__(11);
   
   var _reactRoutingSrcRouter2 = _interopRequireDefault(_reactRoutingSrcRouter);
   
-  var _coreHttpClient = __webpack_require__(19);
+  var _coreHttpClient = __webpack_require__(6);
   
   var _coreHttpClient2 = _interopRequireDefault(_coreHttpClient);
   
-  var _componentsApp = __webpack_require__(12);
+  var _componentsApp = __webpack_require__(13);
   
   var _componentsApp2 = _interopRequireDefault(_componentsApp);
   
-  var _componentsNotFoundPage = __webpack_require__(16);
+  var _componentsNotFoundPage = __webpack_require__(17);
   
   var _componentsNotFoundPage2 = _interopRequireDefault(_componentsNotFoundPage);
   
-  var _componentsErrorPage = __webpack_require__(13);
+  var _componentsErrorPage = __webpack_require__(14);
   
   var _componentsErrorPage2 = _interopRequireDefault(_componentsErrorPage);
   
@@ -1772,6 +1836,25 @@ module.exports =
             return context$2$0.abrupt('return', _react2['default'].createElement(_componentsApp2['default'], { context: state.context }));
   
           case 1:
+          case 'end':
+            return context$2$0.stop();
+        }
+      }, null, _this);
+    });
+  
+    on('*', function callee$1$0(state) {
+      var content;
+      return regeneratorRuntime.async(function callee$1$0$(context$2$0) {
+        while (1) switch (context$2$0.prev = context$2$0.next) {
+          case 0:
+            context$2$0.next = 2;
+            return regeneratorRuntime.awrap(_coreHttpClient2['default'].get('/api/content?path=' + state.path));
+  
+          case 2:
+            content = context$2$0.sent;
+            return context$2$0.abrupt('return', content && _react2['default'].createElement(ContentPage, content));
+  
+          case 4:
           case 'end':
             return context$2$0.stop();
         }
@@ -2366,28 +2449,34 @@ module.exports =
 /* 40 */
 /***/ function(module, exports) {
 
-  module.exports = require("react-bootstrap/lib/Col");
+  module.exports = require("jquery");
 
 /***/ },
 /* 41 */
 /***/ function(module, exports) {
 
-  module.exports = require("react-bootstrap/lib/Input");
+  module.exports = require("react-bootstrap/lib/Col");
 
 /***/ },
 /* 42 */
 /***/ function(module, exports) {
 
-  module.exports = require("react-bootstrap/lib/Row");
+  module.exports = require("react-bootstrap/lib/Input");
 
 /***/ },
 /* 43 */
 /***/ function(module, exports) {
 
-  module.exports = require("react-dom/server");
+  module.exports = require("react-bootstrap/lib/Row");
 
 /***/ },
 /* 44 */
+/***/ function(module, exports) {
+
+  module.exports = require("react-dom/server");
+
+/***/ },
+/* 45 */
 /***/ function(module, exports) {
 
   module.exports = require("superagent");
